@@ -1,0 +1,45 @@
+﻿@model MVC_Project.Models.Entity.SalesTable
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<button type="button"class=" btn btn-primary" data-toggle="modal" data-target="#Modal1">Make A Sale</button>
+<div class=" modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Selling Screen </h2>
+            </div>
+            <form method="post" action="/Sale/NewSale">
+                <div class="modal-body">
+                    <label>
+                        Product Name
+                    </label>
+                    @Html.TextBoxFor(m => m.PRODUCT, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Customer Name Surname
+                    </label>
+                    @Html.TextBoxFor(m => m.CUSTOMER, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Piece
+                    </label>
+                    @Html.TextBoxFor(m => m.PIECE, new { @class = "form-control" })
+                    <br />
+                    <label>
+                        Price
+                    </label>
+                    @Html.TextBoxFor(m => m.PRICE, new { @class = "form-control" })
+                    <button type="submit" class="btn btn-info">Make the sale transaction</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+

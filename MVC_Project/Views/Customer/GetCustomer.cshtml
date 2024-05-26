@@ -1,0 +1,23 @@
+﻿@model MVC_Project.Models.Entity.CustomersTable
+@{
+    ViewBag.Title = "GetCustomer";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update", "Customer", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CUSTOMERID)
+        @Html.TextBoxFor(m => m.CUSTOMERID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.CUSTOMERNAME)
+        @Html.TextBoxFor(m => m.CUSTOMERNAME, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m=> m.CUSTOMERSURNAME)
+        @Html.TextBoxFor(m=>m.CUSTOMERSURNAME,new {@class="form-control"})
+    </div>
+     <div>
+         <button class="btn btn-warning">UPDATE CUSTOMER</button>
+     </div>
+}
+
